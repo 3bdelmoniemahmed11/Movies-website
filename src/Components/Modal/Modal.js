@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import "./Modal.scss";
+import { AiOutlineClose } from "react-icons/ai";
 const Modal = (props) => {
   const [active, setActive] = useState(false);
   useEffect(() => {
@@ -32,7 +33,7 @@ export const ModalContent = (props) => {
       <div ref={contentRef} className="modal_content">
         {props.children}
         <div className="modal_content_close" onClick={closeModal}>
-          <i className="bx bx-x"></i>
+          <AiOutlineClose />
         </div>
       </div>
     </>

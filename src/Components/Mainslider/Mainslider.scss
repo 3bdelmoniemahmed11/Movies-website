@@ -49,9 +49,9 @@
         transform: scale(0);
         transition: transform 0.7s ease;
       }
-      //   @include tablet {
-      //     display: none;
-      //   }
+      @include tablet {
+        display: none;
+      }
     }
     .btns,
     .title,

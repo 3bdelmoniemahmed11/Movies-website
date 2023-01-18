@@ -13,6 +13,7 @@
   &.active {
     visibility: visible;
     opacity: 1;
+    display: flex;
   }
 }
 .modal_content {
@@ -27,7 +28,7 @@
     width: 80%;
   }
   .modal.active & {
-    transform: translateX(0);
+    transform: translateY(0);
     opacity: 1;
   }
 

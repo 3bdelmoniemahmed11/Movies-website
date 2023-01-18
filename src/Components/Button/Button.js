@@ -7,7 +7,7 @@ const Button = (props) => {
     <>
       <button
         className={`custom-btn ${props.className}`}
-        onClick={props.onClick() ? () => props.onClick() : null}
+        onClick={props.onClick}
       >
         {props.children}
       </button>
@@ -19,7 +19,7 @@ export const Outlinebutton = (props) => {
     <>
       <button
         className={`btn-outline ${props.className}`}
-        onClick={props.onClick() ? () => props.onClick() : null}
+        onClick={props.onClick}
       >
         {props.children}
       </button>
