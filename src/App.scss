@@ -1,0 +1,35 @@
+@use "./Scss/" as *;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+html {
+  font-size: 100%;
+  @include mobile {
+    font-size: 60%;
+  }
+  @include tablet {
+    font-size: 80%;
+  }
+}
+
+body {
+  background: $body-bg !important;
+  font-family: $font-family;
+  line-height: 1.5;
+  color: $txt-color !important;
+  font-weight: 400;
+  height: 5000px;
+}
+@media (hover: hover) {
+  a:hover {
+    color: $main-color;
+  }
+}
+.section {
+  padding: 0 2rem;
+}
+a {
+  color: var(--txt-color) !important;
+}
+img {
+  max-width: 100%;
+}
