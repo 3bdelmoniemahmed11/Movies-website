@@ -1,0 +1,18 @@
+@use "../../Scss/" as *;
+.movie-card {
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  position: relative !important;
+  background-position: top !important;
+  border-radius: $border-radius;
+  padding-top: 160%;
+
+  .custom-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    padding: 0.3rem 1.5rem;
+  }
+}

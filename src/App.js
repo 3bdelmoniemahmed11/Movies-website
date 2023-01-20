@@ -4,7 +4,6 @@ import "swiper/swiper.min.css";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
 import { Routes, Route } from "react-router-dom";
-
 function App() {
   return (
     <div className="App">
