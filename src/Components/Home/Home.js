@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import { Outlinebutton } from "../Button/Button";
 import Movieslist from "../Movieslist/Movieslist";
 import { category, movieType, tvType } from "../../api/tmdbApi";
-
 const Home = () => {
   return (
     <>

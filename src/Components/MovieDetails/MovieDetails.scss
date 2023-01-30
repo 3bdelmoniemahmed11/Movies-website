@@ -1,0 +1,64 @@
+@use "../../scss/" as *;
+.banner {
+  height: 60vh;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+  position: relative;
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    @include overlay();
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(to top, $body-bg, rgba($black, 0));
+  }
+}
+.movie-content {
+  display: flex;
+  margin-top: -200px;
+  padding: 0 2rem;
+  position: relative;
+  .img-wrapper {
+    flex: 1;
+    & .img-poster {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 30px;
+      padding-top: 165%;
+    }
+  }
+  .movie-info {
+    width: 70%;
+    padding-left: 2rem;
+    & > * {
+      margin-bottom: 2rem;
+    }
+    .title {
+      font-size: 4rem;
+      line-height: 1;
+    }
+    .genres-item {
+      background-color: $black;
+      border-radius: $border-radius;
+      border: 2px solid $white;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.5rem 1.5rem;
+      margin-bottom: 20px;
+    }
+  }
+}
