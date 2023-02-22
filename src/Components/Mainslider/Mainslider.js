@@ -7,26 +7,33 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useNavigate } from "react-router-dom";
 import "./Mainslider.scss";
 import Modal, { ModalContent } from "../Modal/Modal";
+import Loading from "../Loading/Loading";
 
 const Mainslider = () => {
   SwiperCore.use([Autoplay]);
   const [movieItems, setMovieItems] = useState([]);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     const getMovies = async () => {
+      setLoading(true);
       const params = { page: 1 };
+      setLoading(true);
 
-      console.log("try is fired");
       const response = await tmdbApi.getMoviesList(movieType.popular, {
         params,
       });
 
       setMovieItems(response.results.slice(1, 4));
-      console.log(response);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
     };
+
     getMovies();
   }, []);
-
-  return (
+  return loading ? (
+    <Loading />
+  ) : (
     <>
       <section className="main-slider">
         <Swiper
@@ -111,6 +118,7 @@ const Slideitem = (props) => {
     </>
   );
 };
+
 const Trailer = (props) => {
   const item = props.item;
   const iframeRef = useRef(null);

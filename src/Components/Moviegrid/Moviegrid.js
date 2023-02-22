@@ -5,12 +5,14 @@ import Button from "../Button/Button";
 import Moviecard from "../../Components/Moviecard/Moviecard";
 import Outlinebutton from "../../Components/Button/Button";
 import "./Moviegrid.scss";
+import Loading from "../Loading/Loading";
 
 const Moviegrid = (props) => {
   const { keyword } = useParams();
   const [items, setItems] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     const getItems = async () => {
       /*three options:
@@ -18,12 +20,11 @@ const Moviegrid = (props) => {
             2-shows the tv series 
             3-show the result of search*/
       //   console.log(keyword);
+      setLoading(true);
       let response = null;
 
       if (keyword === undefined) {
         const params = {};
-        console.log("####################");
-        console.log(props.category);
         switch (props.category) {
           case category.movie: {
             response = await tmdbApi.getMoviesList(movieType.upcoming, {
@@ -44,7 +45,9 @@ const Moviegrid = (props) => {
       setItems(response.results);
       // console.log(response.total_pages);
       setTotalPages(response.total_pages);
-      console.log(response.results);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
     };
     getItems();
   }, [keyword, props.category]);
@@ -76,7 +79,9 @@ const Moviegrid = (props) => {
     setItems([...items, ...response.results]);
     setPage(page + 1);
   };
-  return (
+  return loading ? (
+    <Loading />
+  ) : (
     <>
       <div className="row mb-4">
         <div className="col-lg-6">

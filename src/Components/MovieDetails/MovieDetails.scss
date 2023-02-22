@@ -28,7 +28,7 @@
 }
 .movie-content {
   display: flex;
-  margin-top: -200px;
+  margin-top: -300px;
   padding: 0 2rem;
   position: relative;
   .img-wrapper {
@@ -39,6 +39,9 @@
       background-repeat: no-repeat;
       border-radius: 30px;
       padding-top: 165%;
+    }
+    @include mobile {
+      display: none;
     }
   }
   .movie-info {
@@ -60,5 +63,10 @@
       padding: 0.5rem 1.5rem;
       margin-bottom: 20px;
     }
+  }
+  .casts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 10px;
   }
 }

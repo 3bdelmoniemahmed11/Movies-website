@@ -3,20 +3,29 @@ import tmdbApi from "../../api/tmdbApi";
 import apiConfig from "../../api/apiConfig";
 import { useParams } from "react-router-dom";
 import "./MovieDetails.scss";
+import Loading from "../Loading/Loading";
+import Castlist from "../Castlist/Castlist";
+import Movielist from "../Movieslist/Movieslist";
 
 const MovieDetails = () => {
   const { category, id } = useParams();
   const [item, setItem] = useState([]);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     const geItems = async () => {
+      setLoading(true);
       let response = await tmdbApi.detail(category, id, { params: {} });
       setItem(response);
-      console.log(response);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
     };
 
     geItems();
   }, [category, id]);
-  return (
+  return loading ? (
+    <Loading />
+  ) : (
     <>
       <div
         className="banner"
@@ -26,7 +35,7 @@ const MovieDetails = () => {
           )}`,
         }}
       ></div>
-      <div className=" container movie-content">
+      <div className=" container movie-content mb-4">
         <div className="img-wrapper">
           <div
             className="img-poster"
@@ -50,7 +59,16 @@ const MovieDetails = () => {
               })}
           </div>
           <p className="overview">{item.overview}</p>
+          <h2>Casts</h2>
+          <div className="casts">
+            <Castlist id={item.id}></Castlist>
+          </div>
         </div>
+      </div>
+
+      <div className="similar p-4">
+        <h2>similar</h2>
+        <Movielist type="similar" id={item.id} category={category}></Movielist>
       </div>
     </>
   );
