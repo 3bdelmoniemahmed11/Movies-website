@@ -1,7 +1,7 @@
 <h2>Project title :</h2>
 <p>Movies website</p>
 <h3>About the Project: 📚</h3>
-<p>Movies website that shows the movies (trending - top rated) poster on the home page and shows info about each movie (casts - trailer - type) and shows similar movies.</p>
+<p>Developed a movies website that shows the movies (trending - top rated ) on the home page and you can search for a specific movie and shows info about each movie (casts - type) and list similar</p>
 <h3>Live Link / Demo Link: 🔗</h3>
 <p>https://movies-23.netlify.app/</p>
 <h3>How to use ApI :</h3>
