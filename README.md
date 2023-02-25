@@ -3,7 +3,7 @@
 <h3>About the Project: 📚</h3>
 <p>Movies website that shows the movies (trending - top rated) poster on the home page and shows info about each movie (casts - trailer - type) and shows similar movies.</p>
 <h3>Live Link / Demo Link: 🔗</h3>
-<p>Not deployed yet</p>
+<p>https://movies-23.netlify.app/</p>
 <h3>How to use ApI :</h3>
 <ul>
 <li> The api link " https://www.themoviedb.org/ "</li>
@@ -43,4 +43,4 @@
 </ul>
 
 <h3>Status: 📶</h3>
-<p>Not completed</p>
+<p>completed</p>
